@@ -1,0 +1,281 @@
+%===============================================================
+% Template using official colors of Czech Technical University.
+% They are defined by new graphical manual - 2017.
+% Specially designed for Laboratory of Structure of Biomolecules
+% Share and modify as you like. Keep the name of the author.
+% It is forbidden to use the template commercially.
+% Author: Martin Malý.
+% Published: 23.9.2017.
+%===============================================================
+
+\documentclass{beamer}
+\usepackage[utf8]{inputenc}
+
+\usetheme{Madrid}
+  
+\definecolor{cvut_navy}{HTML}{0065BD}
+\definecolor{cvut_blue}{HTML}{6AADE4}
+\definecolor{cvut_gray}{HTML}{156570}
+
+\usepackage{xcolor}
+\definecolor{azulUC3M}{RGB}{0,0,102}
+\definecolor{gray97}{gray}{.97}
+\definecolor{gray75}{gray}{.75}
+\definecolor{gray45}{gray}{.45}
+
+\setbeamercolor{section in toc}{fg=black,bg=white}
+\setbeamercolor{alerted text}{fg=gray45}
+\setbeamercolor*{palette primary}{bg=azulUC3M,fg=gray!20!white}
+\setbeamercolor*{palette secondary}{bg=gray45,fg=white}
+\setbeamercolor*{palette tertiary}{parent=palette primary}
+\setbeamercolor*{palette quaternary}{fg=green,bg=gray!5!white}
+
+\setbeamercolor*{sidebar}{fg=azulUC3M,bg=gray!15!white}
+
+
+\setbeamercolor{titlelike}{parent=palette primary}
+\setbeamercolor{frametitle}{parent=palette primary}
+
+\setbeamercolor*{separation line}{}
+\setbeamercolor*{fine separation line}{}
+
+\setbeamertemplate{navigation symbols}{} 
+
+
+\usepackage{eqnarray,amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{lmodern} % pro pismo tucne a zaroven kurziva
+\usepackage{bm} % pro pismo tucne a zaroven kurziva
+\usepackage{epstopdf}
+\usepackage{changepage}
+\usepackage{array,booktabs}
+
+% definice makra pro české uvozovky:
+\def\bq{\mbox{\kern.1ex\protect\raisebox{-1.3ex}[0pt][0pt]{''}\kern-.1ex}}
+\def\eq{\mbox{\kern-.1ex``\kern.1ex}}
+\def\ifundefined#1{\expandafter\ifx\csname#1\endcsname\relax }%
+\ifundefined{uv}%
+        \gdef\uv#1{\bq #1\eq}
+\fi
+% konec .... použití makra pro psaní český uvozovek: \uv{text uvnitř uvozovek}
+
+
+
+
+
+% DATA
+\author[AUTOR]{TUTOR\\
+Tutor/es: TUTOR}
+\institute[UC3M]{
+	Universidad Carlos III de Madrid \\
+	Av. de la Universidad, 30, 28911. Leganés, Madrid
+}
+\title[TÍTULO]{TÍTULO}
+\subtitle{SUBTÍTULO}
+\date[ESTUDIOS]{
+	ESTUDIOS\\
+	FECHA}
+% \logo{\includegraphics[height=1cm]{overleaf-logo}}
+
+
+
+
+
+% OTHER CONFIGURATION
+
+% Show contents at the beginning of the section
+\AtBeginSection[]
+{
+	\begin{frame}
+		\frametitle{Contenido}
+		\tableofcontents[currentsection]
+	\end{frame}
+}
+
+
+
+
+
+%====================================================
+%========== BEGINNING OF DOCUMENT ===================
+%====================================================
+
+\begin{document}
+
+
+
+
+
+% FRONT PAGE
+
+% Slide
+\begin{frame}
+	\titlepage
+
+	\begin{center}
+		\includegraphics[height=1.6cm]{imagenes/Logo_UC3M.svg.png}
+	\end{center}
+\end{frame}
+
+% Logo at the corner after the front page
+\logo{\includegraphics[height=1cm]{imagenes/Acronimo_nombre3l.jpg}}
+
+% Slide
+\begin{frame}
+	\frametitle{Contenido}
+
+	\tableofcontents
+\end{frame}
+
+
+
+
+
+% SECTION
+
+\section{First section}
+
+% Slide
+\begin{frame}
+\frametitle{Slide}
+
+\begin{itemize}
+	\item Text
+	\item \textbf{Text}
+	\item \textcolor{azulUC3M}{Text}
+	\item \textcolor{azulUC3M}{\textbf{Text}}
+\end{itemize}
+
+Text text text text text text text text text text text text text text text text text text text text text text text text.
+
+\uv{České uvozovky}
+\end{frame}
+
+% Slide
+\begin{frame}
+\frametitle{Columns}
+
+\begin{columns}[onlytextwidth]
+	\begin{column}{0.5\textwidth}
+		\begin{itemize}
+			\item Text
+			\item \textbf{Text}
+			\item \textcolor{azulUC3M}{Text}
+			\item \textcolor{azulUC3M}{\textbf{Text}}
+		\end{itemize}
+	\end{column}
+
+	\begin{column}{0.5\textwidth}
+			\begin{enumerate}
+			\item Text
+			\item \textbf{Text}
+			\item \textcolor{azulUC3M}{Text}
+			\item \textcolor{azulUC3M}{\textbf{Text}}
+		\end{enumerate}
+	\end{column}
+\end{columns}
+\end{frame}
+
+% Slide
+\begin{frame}
+\frametitle{A Link}
+
+Text \href{https://www.uc3m.es}{\beamergotobutton{Link}}.
+\end{frame}
+
+% Slide
+\begin{frame}
+\frametitle{Remarks}
+
+In this slide, some important text will be
+\alert{highlighted} because it's important.
+Please, don't abuse it.
+
+\begin{block}{Remark}
+	Sample text
+\end{block}
+
+\begin{alertblock}{Important theorem}
+	Sample text in red box
+\end{alertblock}
+
+\begin{examples}
+	Sample text in green box. The title of the block is ``Examples".
+\end{examples}
+\end{frame}
+
+
+
+
+
+% SECTION
+\section{Second section}
+
+% Slide
+\begin{frame}
+\frametitle{A Sample Figure}
+
+\begin{itemize}
+	\item To insert figures, upload the image to the file tree and use includegraphics:
+\end{itemize}
+
+\begin{figure}
+\begin{center}
+\vspace{1.2cm}
+\includegraphics[width=0.6\textwidth]{imagenes/creativecommons.png}
+\end{center}
+\end{figure}
+\end{frame}
+
+% DIAPOSITIVA
+\begin{frame}
+\frametitle{A Sample Table}
+
+\begin{block}{}
+	\begin{table}
+	\centering
+	\begin{tabular}{|l|c|c|c|c|}
+	\hline
+	\multicolumn{5}{|c|}{Unique Count of Textual Data}\\
+	\hline
+	Dictionary & words  & nouns & verb & adjectives                        \\
+	\hline
+	Approach - model 1   &   00000000     &   00000000     & 00000000    & 00000000       \\   %\hdashline
+	Approach - model  2  & 00000000 & 00000000 & 00000000 &  00000000  \\  %\hdashline
+	\hline
+	\end{tabular}
+	\end{table}
+\end{block}
+\end{frame}
+
+% Slide
+\begin{frame}
+\frametitle{Mathematical Notation}
+
+\begin{alertblock}
+	{Equation 1}
+	\begin{equation*}
+	c_{t}=\sum_{j=1}^{T} \alpha_{t j} h_{j}, \alpha_{t j}=\frac{\exp \left(e_{t j}\right)}{\sum_{k=1}^{T} \exp \left(e_{t k}\right)}, e_{t j}=a\left(s_{t-1}, h_{j}\right)
+	\end{equation*}
+\end{alertblock}
+\end{frame}
+
+% Slide
+\begin{frame}[noframenumbering,plain]
+\begin{center}
+\Huge \textcolor{cvut_blue}{Thank You}
+\end{center}
+\end{frame}
+
+
+
+
+
+\end{document}
+
+% =============================================================
+% =========================== END =============================
+% =============================================================
+
